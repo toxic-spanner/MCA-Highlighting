@@ -1,0 +1,13 @@
+# [PackageDev] target_format: plist, ext: tmPreferences
+name: Indent
+scope: source.mca
+fileTypes: [mca, mcassembly]
+uuid: 1636ae5e-49ae-47fe-8d0b-9491d4e86065
+
+settings:
+  bracketIndentNextLinePattern: >-
+    (?x)
+      ^ \s* \b(if|while|else)\b [^;]* $
+      | ^ \s* \b(for)\b .* $
+  decreaseIndentPattern: ^(.*\*/)?\s*[}].*$
+  increaseIndentPattern: ^.*\{[^}"']*$

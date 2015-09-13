@@ -1,0 +1,14 @@
+# [PackageDev] target_format: plist, ext: tmPreferences
+name: Comments
+scope: source.mca
+fileTypes: [mca, mcassembly]
+uuid: efd83be3-2641-42fc-97bc-01172318c73b
+
+settings:
+  shellVariables:
+  - name: TM_COMMENT_START
+    value: '//'
+  - name: TM_COMMENT_START_2
+    value: /*
+  - name: TM_COMMENT_END_2
+    value: '*/'

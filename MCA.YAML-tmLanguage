@@ -1,0 +1,133 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: MCAssembly
+scopeName: source.mca
+fileTypes: [mca, mcassembly]
+uuid: be27af90-c373-4e32-9161-5f3ab1d70a3c
+
+repository:
+  escapedCharacters:
+    patterns:
+    - comment: Escaped characters such as \w
+      name: constant.character.escape.mca
+      match: "\\\\\\w+"
+
+patterns:
+
+- comment: Single-line comments
+  name: comment.line.double-slash.mca
+  match: //.*
+
+- comment: multi-line comments
+  name: comment.block.documentation.mca
+  contentName: comment.block.documentation.mca
+  begin: "/\\*"
+  end: "\\*/"
+
+- comment: Commands
+  begin: "(/\\w+)"
+  end: "(;|\\))"
+  beginCaptures:
+    '1': {name: constant.language.mca}
+  endCaptures:
+    '1': {name: keyword.control.mca}
+  patterns:
+  - include: "#escapedCharacters"
+  - comment: {insertions}
+    match: "{\\s*.+\\s*}"
+    name: string.interpolated.mca
+
+- comment: Control statements
+  match: "\\b[Ii][Ff]|[Ww][Hh][Ii][Ll][Ee]|[Rr][Ee][Tt][Uu][Rr][Nn]|[Oo][Uu][Tt]\\b"
+  name: keyword.control.mca
+
+- comment: Macro function definitions, and anonymous branch creation
+  begin: "(#?\\w*)\\s*(\\()(.*)(\\))\\s*({)"
+  end: "(})"
+  beginCaptures:
+    '1': {name: entity.name.function.mca}
+    '2': {name: punctuation.definition.parameters.begin.mca}
+    '3': {name: variable.parameter.mca}
+    '4': {name: punctuation.definition.parameters.end.mca}
+    '5': {name: meta.brace.curly.mca}
+  endCaptures:
+    '1': {name: meta.brace.curly.mca}
+  patterns:
+  - include: $self
+
+- comment: Blocks
+  begin: "({)"
+  end: "(})"
+  beginCaptures:
+   '1': {name: meta.brace.curly.mca}
+  endCaptures:
+   '1': {name: meta.brace.curly.mca}
+  patterns:
+  - include: $self
+
+- comment: Single quoted strings
+  name: string.quoted.single.mca
+  contentName: string.quoted.single.mca
+  begin: "'"
+  end: "'"
+  patterns:
+  - include: "#escapedCharacters"
+
+- comment: Double quoted strings
+  name: string.quoted.double.mca
+  contentName: string.quoted.double.mca
+  begin: '"'
+  end: '"'
+  patterns:
+  - include: "#escapedCharacters"
+
+- comment: Numbers
+  name: constant.numeric.mca
+  match: "(?:\\d*\\.)?\\d+"
+
+- comment: Internal function calls
+  begin: "(\\.\\w+)\\s*(\\()"
+  end: "(\\))"
+  beginCaptures:
+    '1': {name: support.function.mca}
+    '2': {name: meta.brace.round.mca}
+  endCaptures:
+    '1': {name: meta.brace.round.mca}
+  patterns:
+  - include: $self
+
+- comment: Macro function calls
+  begin: "(#?\\w+)\\s*(\\()"
+  end: "(\\))"
+  beginCaptures:
+    '1': {name: entity.name.function.mca}
+    '2': {name: meta.brace.round.mca}
+  endCaptures:
+    '1': {name: meta.brace.round.mca}
+  patterns:
+  - include: $self
+
+- comment: TRUE boolean constant
+  match: "[Tt][Rr][Uu][Ee]"
+  name: constant.language.boolean.true
+- comment: FALSE boolean constant
+  match: "[Ff][Aa][Ll][Ss][Ee]"
+  name: constant.language.boolean.false
+
+- comment: Operators
+  match: "==|!=|>|<|>=|<=|!|\\|\\|"
+  name: keyword.operator.mca
+
+- comment: Assign operator (set variable to value)
+  match: "="
+  name: keyword.operator.mca
+
+- comment: Semicolons
+  name: keyword.control.mca
+  match: ";"
+
+- comment: Anything that is not a word
+  name: invalid.illegal.mca
+  match: "[^\\w\\s,]"
+
+...

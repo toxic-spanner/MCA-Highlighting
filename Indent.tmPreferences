@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>mca</string>
+		<string>mcassembly</string>
+	</array>
+	<key>name</key>
+	<string>Indent</string>
+	<key>scope</key>
+	<string>source.mca</string>
+	<key>settings</key>
+	<dict>
+		<key>bracketIndentNextLinePattern</key>
+		<string>(?x)
+  ^ \s* \b(if|while|else)\b [^;]* $
+  | ^ \s* \b(for)\b .* $</string>
+		<key>decreaseIndentPattern</key>
+		<string>^(.*\*/)?\s*[}].*$</string>
+		<key>increaseIndentPattern</key>
+		<string>^.*\{[^}"']*$</string>
+	</dict>
+	<key>uuid</key>
+	<string>1636ae5e-49ae-47fe-8d0b-9491d4e86065</string>
+</dict>
+</plist>
