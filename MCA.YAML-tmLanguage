@@ -42,7 +42,7 @@ patterns:
   name: keyword.control.mca
 
 - comment: Macro function definitions, and anonymous branch creation
-  begin: "(#?\\w*)\\s*(\\()(.*)(\\))\\s*({)"
+  begin: "(#?\\w+)\\s*(\\()(.*)(\\))\\s*({)"
   end: "(})"
   beginCaptures:
     '1': {name: entity.name.function.mca}
