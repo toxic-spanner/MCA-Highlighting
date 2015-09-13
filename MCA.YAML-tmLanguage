@@ -118,6 +118,16 @@ patterns:
   match: "==|!=|>|<|>=|<=|!|\\|\\|"
   name: keyword.operator.mca
 
+- comment: Brackets
+  begin: "(\\()"
+  end: "\\)"
+  beginCaptures:
+   '1': {name: meta.brace.round.mca}
+  endCaptures:
+   '2': {name: meta.brace.round.mca}
+  patterns:
+  - include: $self
+
 - comment: Assign operator (set variable to value)
   match: "="
   name: keyword.operator.mca

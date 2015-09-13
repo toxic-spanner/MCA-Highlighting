@@ -306,6 +306,37 @@
 			<string>keyword.operator.mca</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>(\()</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.brace.round.mca</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Brackets</string>
+			<key>end</key>
+			<string>\)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>meta.brace.round.mca</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>Assign operator (set variable to value)</string>
 			<key>match</key>
