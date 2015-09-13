@@ -1,15 +1,19 @@
-# MCA Syntax Definitions
+# Textmate/Sublime MCA Syntax Definitions
 
-Syntax definitions for [MCA](https://github.com/toxic-spanner/MCA), for various editors. Currently, the following languages have syntax support:
+Syntax definitions for [MCA](https://github.com/toxic-spanner/MCA), for Textmate or Sublime Text.
 
- - [Sublime Text/Textmate](http://www.sublimetext.com/3) - Installation Guide
+## Installation and Use
+
+[Install package Control](https://packagecontrol.io/installation) if you haven't already, and then select `MCA` from the `Package Control: Install Package` dropdown list in the Command Palette.
+
+The syntax definition will now be used for `.mca` or `.mcassembly` files.
 
 ## Contributing
 
-Have syntax definition for an editor you'd like to add, or want to make an improvement to one of the supported definitions? [Make a pull request](https://github.com/toxic-spanner/MCA-Highlighting/pulls).
+Want to make an improvement to the definition? [Make a pull request](https://github.com/toxic-spanner/MCA-Highlighting/pulls). Remember to edit the YAML files with the `YAML-XXX` extensions and convert them to PList XML files (the easiest way to do this is why [AAAPackageDev](https://github.com/SublimeText/AAAPackageDev)) before creating the request.
 
-Found an issue with one of the definitions? First check to see [if the issue has not been reported](https://github.com/toxic-spanner/MCA-Highlighting/issues), and if not, [submit it on the bug tracker](https://github.com/toxic-spanner/MCA-Highlighting/issues/new).
+Found an issue or colour scheme incompatability with the definition? First check to see [if the issue has not been reported](https://github.com/toxic-spanner/MCA-Highlighting/issues), and if not, [submit it on the bug tracker](https://github.com/toxic-spanner/MCA-Highlighting/issues/new).
 
 ## License
 
-All provided definitions are licensed under the MIT license unless explicitly stated in their respective file. The MIT license is included for reference in the LICENSE file.
+All files are licensed under the MIT license unless explicitly stated at the head of the file. The MIT license is included for reference in the LICENSE file.
