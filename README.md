@@ -4,7 +4,7 @@ Syntax definitions for [MCA](https://github.com/toxic-spanner/MCA), for Textmate
 
 ## Installation and Use
 
-[Install package Control](https://packagecontrol.io/installation) if you haven't already, and then select `MCA` from the `Package Control: Install Package` dropdown list in the Command Palette.
+[Install Package Control](https://packagecontrol.io/installation) if you haven't already, and then select `MCA Language` from the `Package Control: Install Package` dropdown list in the Command Palette.
 
 The syntax definition will now be used for `.mca` or `.mcassembly` files.
 
