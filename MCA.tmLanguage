@@ -19,7 +19,7 @@
 			<key>comment</key>
 			<string>Anything that is not a word</string>
 			<key>match</key>
-			<string>[^\s;]</string>
+			<string>[^\s]</string>
 			<key>name</key>
 			<string>invalid.illegal.mca</string>
 		</dict>
@@ -789,6 +789,14 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>comment</key>
+					<string>Semicolons</string>
+					<key>match</key>
+					<string>;</string>
+					<key>name</key>
+					<string>keyword.control.endstatement.mca</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#Comment</string>

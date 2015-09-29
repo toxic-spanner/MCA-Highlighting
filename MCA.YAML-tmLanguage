@@ -18,6 +18,9 @@ repository:
     - include: "#Block"
   StatementNoBlock:
     patterns:
+    - comment: Semicolons
+      match: ";"
+      name: keyword.control.endstatement.mca
     - include: "#Comment"
     - include: "#If"
     - include: "#While"
@@ -284,5 +287,5 @@ patterns:
 - include: "#Statement"
 - comment: Anything that is not a word
   name: invalid.illegal.mca
-  match: "[^\\s;]"
+  match: "[^\\s]"
 ...
