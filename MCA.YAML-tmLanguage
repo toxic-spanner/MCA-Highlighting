@@ -117,10 +117,10 @@ repository:
     - comment: Import expression
       match: import
       name: constant.language.import.mca
+    - include: "#Literal"
     - comment: Identifier
       match: "([$_a-zA-Z])([$_a-zA-Z0-9])*"
       name: variable.language.mca
-    - include: "#Literal"
     - comment: Internal call expression without arguments
       match: (\.([$_a-zA-Z])([$_a-zA-Z0-9])*)\s*(\()\s*(\))
       captures:
@@ -195,8 +195,18 @@ repository:
         '1': {name: meta.brace.condition.end.mca}
       patterns:
       - include: "#Expression"
+    - comment: Else statement
+      match: else
+      name: keyword.control.else.mca
   While:
     patterns:
+    - comment: Do-while
+      begin: (do)
+      end: (while)
+      beginCaptures:
+        '1': {name: keyword.control.dowhile.do.mca}
+      endCaptures:
+        '1': {name: keyword.control.dowhile.while.mca}
     - comment: While statement
       begin: (while)\s*(\()
       end: (\))
@@ -207,13 +217,6 @@ repository:
         '1': {name: meta.brace.condition.end.mca}
       patterns:
       - include: "#Expression"
-    - comment: Do-while
-      begin: (do)
-      end: (while)
-      beginCaptures:
-        '1': {name: keyword.control.dowhile.do.mca}
-      endCaptures:
-        '1': {name: keyword.control.dowhile.while.mca}
   Continue:
     patterns:
     - comment: Continue statement

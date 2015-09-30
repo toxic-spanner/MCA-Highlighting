@@ -398,16 +398,16 @@
 					<string>constant.language.import.mca</string>
 				</dict>
 				<dict>
+					<key>include</key>
+					<string>#Literal</string>
+				</dict>
+				<dict>
 					<key>comment</key>
 					<string>Identifier</string>
 					<key>match</key>
 					<string>([$_a-zA-Z])([$_a-zA-Z0-9])*</string>
 					<key>name</key>
 					<string>variable.language.mca</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#Literal</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -530,6 +530,14 @@
 							<string>#Expression</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Else statement</string>
+					<key>match</key>
+					<string>else</string>
+					<key>name</key>
+					<string>keyword.control.else.mca</string>
 				</dict>
 			</array>
 		</dict>
@@ -886,6 +894,30 @@
 			<array>
 				<dict>
 					<key>begin</key>
+					<string>(do)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.dowhile.do.mca</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Do-while</string>
+					<key>end</key>
+					<string>(while)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.dowhile.while.mca</string>
+						</dict>
+					</dict>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>(while)\s*(\()</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -919,30 +951,6 @@
 							<string>#Expression</string>
 						</dict>
 					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(do)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.dowhile.do.mca</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Do-while</string>
-					<key>end</key>
-					<string>(while)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.dowhile.while.mca</string>
-						</dict>
-					</dict>
 				</dict>
 			</array>
 		</dict>
