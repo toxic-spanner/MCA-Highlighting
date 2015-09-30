@@ -21,7 +21,6 @@ repository:
     - comment: Semicolons
       match: ";"
       name: keyword.control.endstatement.mca
-    - include: "#Comment"
     - include: "#If"
     - include: "#While"
     - include: "#Continue"
@@ -30,14 +29,6 @@ repository:
     - include: "#Switch"
     - include: "#Expression"
     - include: "#Macro"
-  Comment:
-    patterns:
-    - comment: Single-line comments
-      name: comment.line.double-slash.mca
-      match: //.*(\r\n|\r|\n)
-    - comment: Multi-line comments
-      name: comment.block.mca
-      match: \*(.|\r|\n)*?\*
   Block:
     patterns:
     - comment: Block without arguments
@@ -287,6 +278,17 @@ repository:
       
 
 patterns:
+- comment: Single-line comments
+  name: comment.line.double-slash.mca
+  match: //.*
+- comment: Multi-line documentation comments
+  begin: /\*\*
+  end: \*/
+  name: comment.block.documentation.mca
+- comment: Multi-line comments
+  begin: /\*
+  end: \*/
+  name: comment.block.mca
 - include: "#Statement"
 - comment: Anything that is not a word
   name: invalid.illegal.mca
